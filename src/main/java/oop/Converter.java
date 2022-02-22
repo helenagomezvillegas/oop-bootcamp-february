@@ -1,7 +1,5 @@
 package oop;
 
-import java.awt.geom.Arc2D;
-
 public class Converter {
 
     public static final double FOOT_TO_METERS_CONVERSION_FACTORS = 0.3048;
@@ -14,11 +12,15 @@ public class Converter {
     }
 
     public boolean compareInchWithYards(double inches, double yards) {
-        double result = yards -  INCHES_TO_YARDS_CONVERSION_FACTOR * inches;
-        return result > -PRECISION && result < PRECISION;
+        return compareMeasure(inches, yards, INCHES_TO_YARDS_CONVERSION_FACTOR);
     }
 
     public boolean compareMetersWithCentimeters(double meters, double centimeters) {
-        return Double.compare(centimeters, METERS_TO_CENTIMETERS_CONVERSION_FACTOR * meters) == 0;
+        return compareMeasure(meters, centimeters, METERS_TO_CENTIMETERS_CONVERSION_FACTOR);
+    }
+
+    private boolean compareMeasure(double a, double b, double conversionFactor) {
+        double result = b - conversionFactor * a;
+        return result > -PRECISION && result < PRECISION;
     }
 }
