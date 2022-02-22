@@ -11,7 +11,8 @@ public class Converter {
     }
 
     public boolean compareInchWithYards(double inches, double yards) {
-        return Double.compare(yards, 0.0278 * inches ) == 0;
+        double result = yards -  0.0278 * inches;
+        return result > -0.0001 && result < 0.0001;
     }
 
     public boolean compareMetersWithCentimeters(double meters, double centimeters) {

@@ -18,7 +18,7 @@ public class ConverterTest {
 
     @Test
     public void itShouldCompareInchesWithYards() {
-        assertTrue(converter.compareInchWithYards(5.0, 0.1390));
+        assertTrue(converter.compareInchWithYards(5.0, 0.1389));
     }
 
     @Test
