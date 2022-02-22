@@ -20,7 +20,6 @@ public class Converter {
     }
 
     private boolean compareMeasure(double a, double b, double conversionFactor) {
-        double result = b - conversionFactor * a;
-        return result > -PRECISION && result < PRECISION;
+        return Math.abs(b - conversionFactor * a) < PRECISION;
     }
 }
