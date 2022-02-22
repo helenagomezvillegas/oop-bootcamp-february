@@ -1,18 +1,12 @@
 package oop;
 
-public class Inches {
-    private final double value;
-
+public class Inches extends Distance {
     public Inches(double value) {
-        this.value = value;
+        super(value);
     }
 
-    public Inches add(Inches inchesToAdd){
-        Inches sum = new Inches (inchesToAdd.getValue() +  value);
+    public Inches add(Distance distanceToAdd){
+        Inches sum = new Inches (distanceToAdd.getValue() +  this.getValue());
         return sum;
-    }
-
-    public double getValue() {
-        return value;
     }
 }
